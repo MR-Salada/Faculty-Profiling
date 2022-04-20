@@ -84,9 +84,13 @@ class Auth extends CI_Controller
 
 				if ($this->ion_auth->is_admin()) {
 					
-				redirect('/', 'refresh');
-				} else {
-					redirect('/welcome', 'refresh');
+					redirect('/', 'refresh');
+				} else if ($this->ion_auth->in_group(hr_head)){
+					redirect('/hr', 'refresh');
+				} else if ($this->ion_auth->in_group(members)){
+					redirect('/members', 'refresh');
+				} else if ($this->ion_auth->in_group(quality_assurance_head)) {
+					redirect('/quality_assurance_head', 'refresh');
 				}
 			}
 			else
