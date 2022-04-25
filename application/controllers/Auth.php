@@ -64,6 +64,18 @@ class Auth extends CI_Controller
 	 */
 	public function login()
 	{
+		if ($this->ion_auth->logged_in()) {
+			if ($this->ion_auth->is_admin()) {
+					
+				redirect('/administrator', 'refresh');
+			} else if ($this->ion_auth->in_group("hr_head")){
+				redirect('/hr', 'refresh');
+			} else if ($this->ion_auth->in_group("members")){
+				redirect('/members', 'refresh');
+			} else {
+				redirect('/quality_assurance_head', 'refresh');
+			}
+		}
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		// validate form input
@@ -78,18 +90,13 @@ class Auth extends CI_Controller
 
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
-				//if the login is successful
-				//redirect them back to the home page
-				
-
 				if ($this->ion_auth->is_admin()) {
-					
-					redirect('/', 'refresh');
-				} else if ($this->ion_auth->in_group(hr_head)){
+					redirect('/administrator', 'refresh');
+				} else if ($this->ion_auth->in_group('hr_head')){
 					redirect('/hr', 'refresh');
-				} else if ($this->ion_auth->in_group(members)){
+				} else if ($this->ion_auth->in_group('members')){
 					redirect('/members', 'refresh');
-				} else if ($this->ion_auth->in_group(quality_assurance_head)) {
+				} else {
 					redirect('/quality_assurance_head', 'refresh');
 				}
 			}

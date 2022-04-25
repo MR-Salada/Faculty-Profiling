@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Members extends CI_Controller {
+class Administrator extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -14,8 +14,11 @@ class Members extends CI_Controller {
 
 	public function index()
 	{
-		$data['userinfos'] = $this->ion_auth->user()->row();
 		$data['users'] = $this->user_model->get_users();
-		$this->load->view('pages/members', $data);
+		$this->load->view('pages/admin', $data);
 	}
+
 }
+
+/* End of file Administrator.php */
+/* Location: ./application/controllers/Administrator.php */
