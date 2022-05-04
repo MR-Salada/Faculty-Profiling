@@ -12,6 +12,31 @@ class User_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	
+	function get_education($id){
+		$sql = "SELECT * FROM education WHERE id =?";
+		$query = $this->db->query($sql, $id);
+		return $query->result();
+	}
+
+	function get_eligibilities($id){
+		$sql = "SELECT * FROM eligibilities WHERE id =?";
+		$query = $this->db->query($sql, $id);
+		return $query->result();
+	}
+
+	function get_workexps($id){
+		$sql = "SELECT * FROM workexp WHERE user_id =?";
+		$query = $this->db->query($sql, $id);
+		return $query->result();
+	}
+
+	function get_semandtra($id){
+		$sql = "SELECT * FROM seminar_and_trainings WHERE user_id =?";
+		$query = $this->db->query($sql, $id);
+		return $query->result();
+	}
 }
 
 /* End of file User_model.php */
