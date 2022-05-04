@@ -17,6 +17,7 @@ class Members extends CI_Controller {
 		$id = $this->ion_auth->user()->row()->id;	
 		$data['education'] = $this->user_model->get_education("$id");
 		$data['eligibilities'] = $this->user_model->get_eligibilities("$id");
+		$data['faculty_membership'] = $this->user_model->get_faculty_membership("$id");
 		$data['semandtra'] = $this->user_model->get_semandtra("$id");
 		$data['workexps'] = $this->user_model->get_workexps("$id");
 		$data['userinfos'] = $this->ion_auth->user()->row();

@@ -37,6 +37,12 @@ class User_model extends CI_Model {
 		$query = $this->db->query($sql, $id);
 		return $query->result();
 	}
+
+	function get_faculty_membership($id){
+		$sql = "SELECT * FROM membership WHERE user_id =?";
+		$query = $this->db->query($sql, $id);
+		return $query->result();
+	}
 }
 
 /* End of file User_model.php */
