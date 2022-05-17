@@ -43,6 +43,8 @@ class User_model extends CI_Model {
 		$query = $this->db->query($sql, $id);
 		return $query->result();
 	}
+
+	
 }
 
 /* End of file User_model.php */

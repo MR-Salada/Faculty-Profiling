@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" aria-label="Fourth navbar example">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" aria-label="Fourth navbar example" style="background-color: #197311;">
 	    <div class="container-fluid">
-	      <a class="navbar-brand" href="#">Company Name</a>
+	      <a class="navbar-brand" href="#">NEMSU-TC</a>
 	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
 	      </button>
@@ -25,7 +25,7 @@
 	          </li>
 	        </ul>
 	        <div class="btn-group">
-			  <a class=" nav-link secondary dropdown-toggle" style="text-decoration: none;" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+			  <a class=" nav-link secondary dropdown-toggle" style="color: white; cursor: pointer;" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 			    <?php echo $userinfos->name ?>
 			  </a>
 			  <ul class="dropdown-menu dropdown-menu-lg-end">
