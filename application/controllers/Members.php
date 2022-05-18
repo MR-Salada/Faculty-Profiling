@@ -71,5 +71,26 @@ class Members extends CI_Controller {
 			redirect('Members','refresh');
 	}
 
+	public function update_faculty_profile($id){
+		$this->user_model->update_faculty_profile($id);
+		redirect('Members','refresh');
+
+	}
+
+	public function add_education(){
+		$this->user_model->add_education();
+		redirect('Members', 'refresh');
+	}
+
+	public function update_education($id){
+		$this->user_model->update_education($id);
+		redirect('Members','refresh');
+	}
+
+	public function delete_education($id){
+		$this->user_model->delete_education($id);
+		redirect('Members', 'refresh');
+	}
+
 	
 }
