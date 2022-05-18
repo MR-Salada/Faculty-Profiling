@@ -39,15 +39,15 @@
                       <p>Please login to your account</p>
                       <div class="form-outline mb-4">
                         <input type="email" id="email" name="identity" class="form-control"
-                        placeholder="email address" />
-                        <label class="form-label" for="form2Example11">Username</label>
+                        placeholder="Email" />
+                        <!-- <label class="form-label" for="email">Username</label> -->
                       </div>
                       <div class="form-outline mb-4">
-                        <input type="password" id="password" name="password" class="form-control" />
-                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+                        <!-- <label class="form-label" for="password">Password</label> -->
                       </div>
-                      <div class="text-center pt-1 mb-5 pb-1">
-                        <button class="btn btn-success btn-block fa-lg mb-3" type="submit">Log
+                      <div class="text-center d-grid pt-1 mb-5 pb-1">
+                        <button class="btn btn-success mb-3" type="submit">Log
                         in</button>
                         
                       </div>
