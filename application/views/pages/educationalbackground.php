@@ -37,7 +37,12 @@
 						<div class="mb-2 row">
 						    <label for="degree" class="col-sm-3 col-form-label">Degree</label>
 						    <div class="col-sm-9">
-						      <input type="text"  class="form-control" id="degree" name="degree">
+						      <select class="form-select" aria-label="Default select example" name="degree">
+								  <option selected>Open this select menu</option>
+								  <option value="Bachelor">Bachelor</option>
+								  <option value="Master">Master</option>
+								  <option value="Doctoral">Doctoral</option>
+							  </select>
 						    </div>
 						</div>
 						<div class="mb-2 row">
@@ -115,7 +120,12 @@
 								<div class="mb-2 row">
 								    <label for="degree" class="col-sm-3 col-form-label">Degree</label>
 								    <div class="col-sm-9">
-								      <input type="text"  class="form-control" id="degree" name="degree" value="<?= $row->degree ?>">
+								      <select class="form-select" aria-label="Default select example" name="degree">
+										  <option selected><?= $row->degree ?></option>
+										  <option value="Bachelor">Bachelor</option>
+										  <option value="Master">Master</option>
+										  <option value="Doctoral">Doctoral</option>
+									  </select>
 								    </div>
 								</div>
 								<div class="mb-2 row">
@@ -167,7 +177,7 @@
 			                </div>
 			              </div>
 			            </div>
-			          </form>
+			         </form>
 			  	<?php endforeach ?>
 			   
 			   

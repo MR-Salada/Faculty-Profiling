@@ -21,7 +21,7 @@ class User_model extends CI_Model {
 	}
 
 	function get_eligibilities($id){
-		$sql = "SELECT * FROM eligibilities WHERE id =?";
+		$sql = "SELECT * FROM eligibilities WHERE user_id =?";
 		$query = $this->db->query($sql, $id);
 		return $query->result();
 	}
@@ -88,6 +88,79 @@ class User_model extends CI_Model {
 		$query = $this->db->query($sql,$id);
 	}
 
+	function add_eligibility(){
+		$data = array(
+			'user_id' => $this->input->post('user_id'),
+			'license' => $this->input->post('license'),
+			'rate' => $this->input->post('rate'),
+			'date' => $this->input->post('date'),
+			'placeofexam' => $this->input->post('placeofexam'),
+			'licensenumber' => $this->input->post('licensenumber'),
+			'validity' => $this->input->post('validity')
+		);
+		$this->db->insert('eligibilities', $data);
+	}
+
+	function update_eligibility($id){
+		$data = array(
+			'license' => $this->input->post('license'),
+			'rate' => $this->input->post('rate'),
+			'date' => $this->input->post('date'),
+			'placeofexam' => $this->input->post('placeofexam'),
+			'licensenumber' => $this->input->post('licensenumber'),
+			'validity' => $this->input->post('validity')
+		);
+		$this->db->where('id', $id);
+		$update = $this->db->update('eligibilities', $data);
+	}
+	function delete_eligibility($id){
+		$sql = "DELETE FROM eligibilities WHERE id =?";
+		$query = $this->db->query($sql,$id);
+	}
+	function add_work_exp(){
+		$data = array(
+			'user_id' => $this->input->post('user_id'),
+			'company' => $this->input->post('company'),
+			'datefrom' => $this->input->post('datefrom'),
+			'dateto' => $this->input->post('dateto'),
+			'salary' => $this->input->post('salary'),
+			'position' => $this->input->post('position'),
+			'statusofemployment' => $this->input->post('statusofemployment')
+		);
+		$this->db->insert('workexp', $data);
+	}
+	function update_workexp($id){
+		$data = array(
+			'company' => $this->input->post('company'),
+			'datefrom' => $this->input->post('datefrom'),
+			'dateto' => $this->input->post('dateto'),
+			'salary' => $this->input->post('salary'),
+			'position' => $this->input->post('position'),
+			'statusofemployment' => $this->input->post('statusofemployment')
+		);
+		$this->db->where('id', $id);
+		$update = $this->db->update('workexp', $data);
+	}
+	function delete_workexp($id){
+		$sql = "DELETE FROM workexp WHERE id =?";
+		$query = $this->db->query($sql,$id);
+	}
+	function add_seminarandtrainings(){
+		$data = array(
+			'user_id' => $this->input->post('user_id'),
+			'title' => $this->input->post('title'),
+			'datefrom' => $this->input->post('datefrom'),
+			'dateto' => $this->input->post('dateto'),
+			'numhours' => $this->input->post('numhours'),
+			'sponsor' => $this->input->post('sponsor'),
+			'venue' => $this->input->post('venue')
+		);
+		$this->db->insert('seminar_and_trainings', $data);
+	}
+	function delete_semandtra($id){
+		$sql = "DELETE FROM seminar_and_trainings WHERE id =?";
+		$query = $this->db->query($sql,$id);
+	}
 	
 }
 

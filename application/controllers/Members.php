@@ -91,6 +91,39 @@ class Members extends CI_Controller {
 		$this->user_model->delete_education($id);
 		redirect('Members', 'refresh');
 	}
+	public function add_eligibility(){
+		$this->user_model->add_eligibility();
+		redirect('Members', 'refresh');
+	}
 
+	public function update_eligibility($id){
+		$this->user_model->update_eligibility($id);
+		redirect('Members', 'refresh');
+	}
+	public function delete_eligibility($id){
+		$this->user_model->delete_eligibility($id);
+		redirect('Members', 'refresh');
+	}
+
+	public function add_work_exp(){
+		$this->user_model->add_work_exp();
+		redirect('Members', 'refresh');
+	}
+	public function update_workexp($id){
+		$this->user_model->update_workexp($id);
+		redirect('Members', 'refresh');
+	}
+	public function delete_workexp($id){
+		$this->user_model->delete_workexp($id);
+		redirect('Members', 'refresh');
+	}
+	public function add_seminarandtrainings(){
+		$this->user_model->add_seminarandtrainings();
+		redirect('Members', 'refresh');
+	}
+	public function delete_semandtra($id){
+		$this->user_model->delete_semandtra($id);
+		redirect('Members', 'refresh');
+	}
 	
 }
