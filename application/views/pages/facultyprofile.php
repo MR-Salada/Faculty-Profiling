@@ -1,7 +1,7 @@
 		<div class="row">
 			<div class="col col-3 border">
 				<h4><strong>Faculty Profile</strong></h4>
-				<p><?php echo $userinfos->college ?> <br> <?= $userinfos->program ?> <br> <?= $userinfos->fieldofdiscipline ?> <br> <?= $userinfos->designation ?> <br> <?= $userinfos->academicrank ?> <br> <?= $userinfos->yearsofteaching ?></p>
+				<p><?php echo $userinfos->college ?> <br> <?= $userinfos->program ?> <br> <?= $userinfos->fieldofdiscipline ?> <br> <?= $userinfos->designation ?> <br> <?= $userinfos->academicrank ?> <br> <?= $userinfos->yearsofteaching ?> year/s of teaching</p>
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#facultyprofile">
 				  Edit Field
@@ -26,9 +26,17 @@
 							<div class="mb-2 row">
 							    <label for="program" class="col-sm-3 col-form-label">Program</label>
 							    <div class="col-sm-9">
-							      <input type="text"  class="form-control" id="program" name="program" value="<?= $userinfos->program ?>">
+							    	<select class="form-select" aria-label="Program" name="program">
+									  	<option selected value="<?= $userinfos->program ?>"><?= $userinfos->program ?></option>
+									  	<option value="BAT">BAT</option>
+									  	<option value="BSBA">BSBA</option>
+									  	<option value="TEED">TEED</option>
+									  	<option value="BSCS">BSCS</option>
+									  	<option value="BSHM">BSHM</option>
+									</select>
 							    </div>
 							</div>
+							
 							<div class="mb-2 row">
 							    <label for="designation" class="col-sm-3 col-form-label">Designation</label>
 							    <div class="col-sm-9">
@@ -44,7 +52,13 @@
 							<div class="mb-2 row">
 							    <label for="academicrank" class="col-sm-3 col-form-label">Academic Rank</label>
 							    <div class="col-sm-9">
-							      <input type="text"  class="form-control" id="academicrank" name="academicrank" value="<?= $userinfos->academicrank ?>">
+							    	<select class="form-select" aria-label="Program" name="academicrank">
+									  	<option selected value="<?= $userinfos->academicrank ?>"><?= $userinfos->academicrank ?></option>
+									  	<option value="Professor">Professor</option>
+									  	<option value="Associate Professor">Associate Professor</option>
+									  	<option value="Assistant Professor">Assistant Professor</option>
+									  	<option value="Instructor">Instructor</option>
+									</select>
 							    </div>
 							</div>
 							<div class="mb-2 row">
@@ -109,3 +123,5 @@
 			</div>
 
 		</div>
+
+		

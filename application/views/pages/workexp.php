@@ -50,7 +50,12 @@
 					<div class="mb-2 row">
 					    <label for="statusofemployment" class="col-sm-3 col-form-label">Status of Employment</label>
 					    <div class="col-sm-9">
-					      <input type="text"  class="form-control" id="statusofemployment" name="statusofemployment">
+					      	<select class="form-select" name="statusofemployment">
+							  	<option selected value="">Open to select menu</option>
+							  	<option value="Permanent">Permanent</option>
+							  	<option value="Temporary Permanent">Temporary Permanent</option>
+							 	<option value="Contract of Service">Contract of Service</option>
+							</select>
 					    </div>
 					</div>
 			      	

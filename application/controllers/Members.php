@@ -16,7 +16,7 @@ class Members extends CI_Controller {
 
 	public function index()
 	{
-
+		$data['title'] = "NEMSU-TC";
 		$id = $this->ion_auth->user()->row()->id;	
 		$data['education'] = $this->user_model->get_education("$id");
 		$data['eligibilities'] = $this->user_model->get_eligibilities("$id");
@@ -73,7 +73,7 @@ class Members extends CI_Controller {
 
 	public function update_faculty_profile($id){
 		$this->user_model->update_faculty_profile($id);
-		redirect('Members','refresh');
+		// redirect('Members','refresh');
 
 	}
 
@@ -124,6 +124,25 @@ class Members extends CI_Controller {
 	public function delete_semandtra($id){
 		$this->user_model->delete_semandtra($id);
 		redirect('Members', 'refresh');
+	}
+
+	public function edit_basic_info($id){
+		$this->user_model->edit_basic_info($id);
+		redirect('Members', 'refresh');
+	}
+
+	public function administrator()
+	{
+		$data['title'] = "NEMSU-TC";
+		$id = $this->ion_auth->user()->row()->id;	
+		$data['education'] = $this->user_model->get_education("$id");
+		$data['eligibilities'] = $this->user_model->get_eligibilities("$id");
+		$data['faculty_membership'] = $this->user_model->get_faculty_membership("$id");
+		$data['semandtra'] = $this->user_model->get_semandtra("$id");
+		$data['workexps'] = $this->user_model->get_workexps("$id");
+		$data['userinfos'] = $this->ion_auth->user()->row();
+		$data['users'] = $this->user_model->get_users();
+		$this->load->view('pages/members', $data);
 	}
 	
 }

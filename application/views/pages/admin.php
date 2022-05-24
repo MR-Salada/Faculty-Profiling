@@ -1,32 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="<?php echo site_url('assets/css/bootstrap.min.css') ?>">
-</head>
-<body>
-	<a href="<?php echo site_url('auth/create_user') ?>" class="btn btn-primary" title="">Create</a>
+<?php $this->load->view('templates/header'); ?>
+  <?php $this->load->view('pages/navbar'); ?>
 
-	<div class="container">
-		<div class="row">
-			<?php foreach ($users as $user): ?>
-				<div class="col col-3">
-					<div class="card" style="width: 18rem;">
-					  <div class="card-body">
-					    <h5 class="card-title"><?php echo $user->name ?></h5>
-					    <p class="card-text"><?php echo $user->email ?></p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-				</div>
-			<?php endforeach ?>
-			
+<div class="container my-5 py-5 border " style="">
+  <button type="button" class="btn btn-success">Add New User</button>
+  <table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($users as $user): ?>
+         <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                  src="<?= site_url('assets/images/') ?><?= $user->profilepic ?>"
+                  alt="Profile Picture"
+                  style="width: 45px; height: 45px"
+                  class="rounded-circle"
+                  />
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?= $user->name ?></p>
+                <p class="text-muted mb-0"><?= $user->email ?></p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <p class="fw-normal mb-1"><?= $user->designation ?></p>
+            <!-- <p class="text-muted mb-0">IT department</p> -->
+          </td>
+          <td>
+            <?php if ($user->active): ?>
+              <a href="<?= site_url('auth/deactivate/') ?><?= $user->id ?> " title=""><span class="badge bg-success">Active</span></a>
+            <?php else: ?>
+              <a href="<?= site_url('auth/activate/') ?><?= $user->id ?>" title=""><span class="badge bg-danger">Inactive</span></a>
+            <?php endif ?>
 
-		</div>
-	</div>
-	
-
-</body>
-</html>
+          
+          </td>
+          
+          
+        </tr>
+      <?php endforeach ?>
+           
+    </tbody>
+  </table>
+</div>
+    
+<?php $this->load->view('templates/footer'); ?>

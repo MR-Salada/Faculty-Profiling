@@ -70,7 +70,7 @@ class Auth extends CI_Controller
 		if ($this->ion_auth->logged_in()) {
 			if ($this->ion_auth->is_admin()) {
 					
-				redirect('/administrator', 'refresh');
+				redirect('administrator', 'refresh');
 			} else if ($this->ion_auth->in_group("hr_head")){
 				redirect('/hr', 'refresh');
 			} else if ($this->ion_auth->in_group("members")){
@@ -415,7 +415,7 @@ class Auth extends CI_Controller
 		{
 			// redirect them to the auth page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+			redirect("/administrator", 'refresh');
 		}
 		else
 		{
@@ -472,7 +472,7 @@ class Auth extends CI_Controller
 			}
 
 			// redirect them back to the auth page
-			redirect('auth', 'refresh');
+			redirect('administrator', 'refresh');
 		}
 	}
 
@@ -493,8 +493,8 @@ class Auth extends CI_Controller
 		$this->data['identity_column'] = $identity_column;
 
 		// validate form input
-		$this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'trim|required');
-		$this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'trim|required');
+		$this->form_validation->set_rules('name', $this->lang->line('create_user_validation_fname_label'), 'trim|required');
+		// $this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'trim|required');
 		if ($identity_column !== 'email')
 		{
 			$this->form_validation->set_rules('identity', $this->lang->line('create_user_validation_identity_label'), 'trim|required|is_unique[' . $tables['users'] . '.' . $identity_column . ']');
@@ -516,8 +516,8 @@ class Auth extends CI_Controller
 			$password = $this->input->post('password');
 
 			$additional_data = [
-				'first_name' => $this->input->post('first_name'),
-				'last_name' => $this->input->post('last_name'),
+				'name' => $this->input->post('name'),
+				// 'last_name' => $this->input->post('last_name'),
 				'company' => $this->input->post('company'),
 				'phone' => $this->input->post('phone'),
 			];
@@ -535,18 +535,18 @@ class Auth extends CI_Controller
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
-			$this->data['first_name'] = [
-				'name' => 'first_name',
-				'id' => 'first_name',
+			$this->data['name'] = [
+				'name' => 'name',
+				'id' => 'name',
 				'type' => 'text',
-				'value' => $this->form_validation->set_value('first_name'),
+				'value' => $this->form_validation->set_value('name'),
 			];
-			$this->data['last_name'] = [
-				'name' => 'last_name',
-				'id' => 'last_name',
-				'type' => 'text',
-				'value' => $this->form_validation->set_value('last_name'),
-			];
+			// $this->data['last_name'] = [
+			// 	'name' => 'last_name',
+			// 	'id' => 'last_name',
+			// 	'type' => 'text',
+			// 	'value' => $this->form_validation->set_value('last_name'),
+			// ];
 			$this->data['identity'] = [
 				'name' => 'identity',
 				'id' => 'identity',

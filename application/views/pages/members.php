@@ -15,3 +15,4 @@
 	<?php $this->load->view('pages/seminarandtraining'); ?>
 		
 	</div>
+<?php $this->load->view('templates/footer'); ?>

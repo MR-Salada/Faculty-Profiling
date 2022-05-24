@@ -161,6 +161,33 @@ class User_model extends CI_Model {
 		$sql = "DELETE FROM seminar_and_trainings WHERE id =?";
 		$query = $this->db->query($sql,$id);
 	}
+
+	function edit_basic_info($id){
+		$data = array(
+			'name' => $this->input->post('name'),
+			'birthday' => $this->input->post('birthday'),
+			'birthplace' => $this->input->post('birthplace'),
+			'age' => $this->input->post('age'),
+			'gender' => $this->input->post('gender'),
+			'civilstat' => $this->input->post('civilstat'),
+			'height' => $this->input->post('height'),
+			'weight' => $this->input->post('weight'),
+			'bloodtype' => $this->input->post('bloodtype'),
+			'gsis' => $this->input->post('gsis'),
+			'philhealth' => $this->input->post('philhealth'),
+			'sss' => $this->input->post('sss'),
+			'pagibig' => $this->input->post('pagibig'),
+			'tin' => $this->input->post('tin'),
+			'citizenship' => $this->input->post('citizenship'),
+			'address' => $this->input->post('address'),
+			'phone' => $this->input->post('phone'),
+			'email' => $this->input->post('email')
+		);
+		$this->db->where('id', $id);
+		$update = $this->db->update('users', $data);
+
+
+	}
 	
 }
 

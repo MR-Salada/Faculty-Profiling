@@ -14,6 +14,9 @@ class Administrator extends CI_Controller {
 
 	public function index()
 	{
+		$this->data['users'] = $this->ion_auth->users()->result();
+		$data['title'] = "NEMSU-TC";
+		$data['userinfos'] = $this->ion_auth->user()->row();
 		$data['users'] = $this->user_model->get_users();
 		$this->load->view('pages/admin', $data);
 	}
