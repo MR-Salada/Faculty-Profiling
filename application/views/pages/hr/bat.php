@@ -39,6 +39,7 @@
 <div class="container mt-5 pt-5">
 
 	<h2 class="text-center"><strong>Faculty Report Summary</strong></h2>
+	<h5 class="text-center"><?= $title ?></h5>
 	<!-- Nav tabs -->
 	
 	<div class="row mt-5 border">
@@ -46,7 +47,7 @@
 			<div class="row mt-5 p-3">
 				<div id="list-example" class="list-group">
 				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/') ?>">All Faculty</a>
-				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/') ?>">BAT</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bat') ?>">BAT</a>
 				  <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
 				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
 				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
@@ -57,16 +58,72 @@
 
 			</div>
 		</div>
-		<div class="col col-3 mt-5">
+		<div class="col col-9 mt-5">
 			<div class="card">
 				<h5 class="card-header bg-success text-light">Gender</h5>
-				<div class="card-body">					
-					<h5 class="card-text">Male: <?= count($bat_getmale) ?></h5>
-					<h5 class="card-text">Female: <?= count($bat_getmale) ?></h5>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<h5 class="card-text">Male: <?= count($bat_getmale) ?></h5>
+							<h5 class="card-text">Female: <?= count($bat_getfemale) ?></h5>
+						</div>
+						<div class="col">
+							<canvas id="allFacultygender" width="200" height="100"></canvas>	
+						</div>
+					</div>	
 				</div>
 			</div>
+			<div class="card mt-2">
+			  	<h5 class="card-header bg-success text-light">Education</h5>
+			    <div class="card-body">
+			    	<div class="row">
+			    		<div class="col">
+			    			<h5 class="card-text">Doctorate: <?= count($bat_getdoctorate) ?></h5>
+					      	<h5 class="card-text">Master's: <?= count($allfaculty_getmaster) ?></h5>
+					      	<h5 class="card-text">Bachelor's: <?= count($allfaculty_getbachelor) ?></h5>
+			    		</div>
+			    		<div class="col">
+							<canvas id="allFacultyeducation" width="200" height="100"></canvas>
+			    		</div>
+			    	</div>
+			  	</div>
+			</div>
+			<div class="card mt-2">
+			  	<h5 class="card-header bg-success text-light">Employment Status</h5>
+			    <div class="card-body">
+			    	<div class="row">
+			    		<div class="col">
+			    			<h5 class="card-text">Permanent: <?= count($allfaculty_getpermanent) ?></h5>
+					      	<h5 class="card-text">Temporary Permanent: <?= count($allfaculty_gettemppermanent) ?></h5>
+					      	<h5 class="card-text">Contract of Service: <?= count($allfaculty_getcos) ?></h5>
+			    		</div>
+			    		<div class="col">
+							<canvas id="allFacultyemploymentstat" width="200" height="100"></canvas>
+			    		</div>
+			    	</div>
+			  	</div>
+			</div>
+			<div class="card mt-2">
+			  	<h5 class="card-header bg-success text-light">Academic Rank</h5>
+			    <div class="card-body">
+			    	<div class="row">
+			    		<div class="col">
+							<h5 class="card-text">Professor: <?= count($allfaculty_getprofessor) ?></h5>
+							<h5 class="card-text">Associate Professor: <?= count($allfaculty_getasscprofessor) ?></h5>
+							<h5 class="card-text">Assistant Professor: <?= count($allfaculty_getassiprofessor) ?></h5>
+							<h5 class="card-text">Instructor: <?= count($allfaculty_instructor) ?></h5>
+			    		</div>
+			    		<div class="col">
+							<canvas id="allFacultyacadrank" width="200" height="100"></canvas>
+			    		</div>
+			    	</div>
+			  	</div>
+			</div>
 		</div>
-		<div class="col col-6"><canvas id="allFacultygender" width="400" height="200"></canvas></div>
+		<!-- <div class="col col-3 mt-5">
+			<canvas id="allFacultygender" width="100" height="100"></canvas><br>
+			<canvas id="allFacultyeducation" width="100" height="100"></canvas>
+		</div> -->
 
 	</div>
 </div>

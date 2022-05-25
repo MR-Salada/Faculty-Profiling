@@ -29,6 +29,15 @@ class Hr_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function allfaculty_getmaledoctorate(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->from('users');
+		$this->db->where('degree', 'Doctoral');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function allfaculty_getmaster(){
 		$this->db->select('*');
 		$this->db->from('education');
@@ -98,7 +107,7 @@ class Hr_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where('gender', 'Male');
-		$this->db->where('program', 'BSCS');
+		$this->db->where('program', 'BAT');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -106,6 +115,7 @@ class Hr_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where('gender', 'Female');
+		$this->db->where('program', 'BAT');
 		$query = $this->db->get();
 		return $query->result();
 	}

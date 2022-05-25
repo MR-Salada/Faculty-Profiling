@@ -23,7 +23,8 @@ class Hr extends CI_Controller {
 		$data['allfaculty_getasscprofessor'] = $this->hr_model->allfaculty_getasscprofessor();
 		$data['allfaculty_getassiprofessor'] = $this->hr_model->allfaculty_getassiprofessor();
 		$data['allfaculty_instructor'] = $this->hr_model->allfaculty_instructor();
-		$data['title'] = 'HR Head';
+		$data['allfaculty_getmaledoctorate'] = $this->hr_model->allfaculty_getmaledoctorate();
+		$data['title'] = 'All Faculty';
 		$data['userinfos'] = $this->ion_auth->user()->row();
 		$this->load->view('pages/hr', $data);
 
@@ -34,6 +35,10 @@ class Hr extends CI_Controller {
 		$data['title'] = 'HR Head';
 		$data['userinfos'] = $this->ion_auth->user()->row();
 		$data['bat_getmale'] = $this->hr_model->bat_getmale();
+		$data['bat_getfemale'] = $this->hr_model->bat_getfemale();
+		$data['bat_getdoctorate'] = $this->hr_model->bat_getdoctorate();
+		$data['bat_getmaster'] = $this->hr_model->bat_getmaster();
+		$data['bat_getbachelor'] = $this->hr_model->bat_getbachelor();
 		$this->load->view('pages/hr/bat', $data);
 	}
 }
