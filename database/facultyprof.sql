@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2022 at 10:54 AM
+-- Generation Time: May 26, 2022 at 10:12 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -34,17 +34,16 @@ CREATE TABLE `education` (
   `datefrom` int(4) NOT NULL,
   `dateto` int(4) NOT NULL,
   `degree` varchar(25) NOT NULL,
-  `areaofstudy` varchar(25) NOT NULL
+  `areaofstudy` varchar(25) NOT NULL,
+  `program` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `education`
 --
 
-INSERT INTO `education` (`id`, `user_id`, `school`, `datefrom`, `dateto`, `degree`, `areaofstudy`) VALUES
-(3, 2, 'Surigao del Sur State University 2', 2019, 2023, 'Master', 'Area of Study'),
-(4, 2, 'Surigao del Sur State University 1', 2009, 2014, 'Bachelor', 'Area of Study'),
-(5, 2, 'Surigao del Sur State University 3', 2010, 2013, 'Doctoral', 'Computer');
+INSERT INTO `education` (`id`, `user_id`, `school`, `datefrom`, `dateto`, `degree`, `areaofstudy`, `program`) VALUES
+(8, 7, 'Surigao del Sur State University 2', 2000, 2004, 'Bachelor', 'Area of Study', 'BAT');
 
 -- --------------------------------------------------------
 
@@ -138,15 +137,9 @@ CREATE TABLE `seminar_and_trainings` (
   `dateto` date NOT NULL,
   `numhours` int(5) NOT NULL,
   `sponsor` varchar(25) NOT NULL,
-  `venue` varchar(30) NOT NULL
+  `venue` varchar(30) NOT NULL,
+  `program` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `seminar_and_trainings`
---
-
-INSERT INTO `seminar_and_trainings` (`id`, `user_id`, `title`, `datefrom`, `dateto`, `numhours`, `sponsor`, `venue`) VALUES
-(1, 2, 'Seminar and Training Title', '2019-01-01', '2020-01-01', 10, 'Sponsor Name', 'Venue of Seminar');
 
 -- --------------------------------------------------------
 
@@ -204,11 +197,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `name`, `birthday`, `birthplace`, `age`, `phone`, `gender`, `civilstat`, `height`, `weight`, `bloodtype`, `gsis`, `philhealth`, `sss`, `pagibig`, `tin`, `citizenship`, `address`, `college`, `program`, `fieldofdiscipline`, `designation`, `academicrank`, `yearsofteaching`, `overview`, `title`, `membership_date`, `profilepic`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$10$7q4C/f9M1rq5b7zIC4vlTOhCppjwBIM079.4Brqk1.OEkkft6fHhe', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1652839852, 1, 'Super', NULL, '', 0, '0', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '2.png'),
-(2, '::1', NULL, '$2y$10$kdIZlanQ0fRnGKsaPexioOEs5yKGS5RwG8pFlIMmNkCDfaxDnRFPO', 'user@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1650349016, 1652937704, 1, 'General User  Name', NULL, 'Birthplace', 25, '09123456789', 'Male', 'Single', 160, 50, 'O+', '123-456-789', '123-456-789', '123-456-789', '123-456-789', '123-456-789', 'Filipino', 'Temporary Address', 'College', 'Program', 'Field of Discipline', 'Designation', 'Academic Rank', 50, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Manager', '2021-01-01', '2.png'),
-(3, '::1', NULL, '$2y$10$nGSrtQQufm3fC5MYn3FHIei4DFIri4TuwjvnQMl2yBYhURAJiFoLy', 'hr_head@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1650419938, 1651648007, 1, 'HR', NULL, '', 0, '09123456789', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '2.png'),
-(4, '::1', NULL, '$2y$10$zuSO2KNhciY/Q/.pssZNLO5lQ8fDP1jiQDNt39ExpZ33tQYEhzGhO', 'qah@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1650422704, 1650599404, 1, 'Quality', NULL, '', 0, '09123456789', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '2.png'),
-(5, '::1', NULL, '$2y$10$QJO60DZxD.VqNZ.Hrl3vZO9f.FcWWjrkEkXAjwyf/1ZQIwdkLq7OO', 'user2@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1651648098, 1651648243, 1, NULL, NULL, '', 0, '09123456789', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '2.png');
+(1, '127.0.0.1', 'administrator', '$2y$10$7q4C/f9M1rq5b7zIC4vlTOhCppjwBIM079.4Brqk1.OEkkft6fHhe', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1653267619, 1, 'Super', NULL, '', 0, '0', 'Male', '', 0, 0, '', '', '', '', '', '', '', '', '', 'BSCS', '', 'Designation', 'Professor', 0, '', '', '', '2.png'),
+(3, '::1', NULL, '$2y$10$nGSrtQQufm3fC5MYn3FHIei4DFIri4TuwjvnQMl2yBYhURAJiFoLy', 'hr_head@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1650419938, 1653544519, 1, 'HR', NULL, '', 0, '09123456789', 'Female', '', 0, 0, '', '', '', '', '', '', '', '', '', 'TEED', '', 'Designation', 'Assistant Professor', 0, '', '', '', '2.png'),
+(4, '::1', NULL, '$2y$10$zuSO2KNhciY/Q/.pssZNLO5lQ8fDP1jiQDNt39ExpZ33tQYEhzGhO', 'qah@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1650422704, 1650599404, 1, 'Quality', NULL, '', 0, '09123456789', 'Female', '', 0, 0, '', '', '', '', '', '', '', '', '', 'BSHM', '', 'Designation', 'Instructor', 0, '', '', '', '2.png'),
+(7, '::1', NULL, '$2y$10$ebNDTfFqAdxK6CBUfBuD4O4vBoFZ3ho0p3FL.Jm9EWz3NjotDxf9O', 'user@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1653017195, 1653544500, 1, 'General User  Name 1', '0000-00-00', '', 0, '09123456789', 'Male', '', 0, 0, '', '', '', '', '', '', '', '', 'College', 'BAT', 'Field of Discipline', 'Designation', 'Associate Professor', 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', '', '7.png'),
+(8, '::1', NULL, '$2y$10$U0Yw.NwYL155FE1MT0YVzeye7qKI3SedqyUd6CiYIVm224LLWSztW', 'user2@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1653029512, 1653265371, 1, 'General User  Name 2', '2001-06-09', 'Place where I was born', 21, '09123456789', 'Male', 'Single', 5, 50, '0+', '123-456-789', '123-456-789', '123-456-789', '123-456-789', '123-456-789', 'Filipino', 'Permanent Address', 'College', 'BSBA', 'Field of Discipline', 'Designation', 'Associate Professor', 1, '', '', '', '2.jpg');
 
 -- --------------------------------------------------------
 
@@ -228,10 +221,10 @@ CREATE TABLE `users_groups` (
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (8, 1, 1),
-(5, 2, 2),
 (7, 3, 3),
 (10, 4, 4),
-(11, 5, 2);
+(13, 7, 2),
+(14, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -247,15 +240,9 @@ CREATE TABLE `workexp` (
   `dateto` date NOT NULL,
   `salary` int(10) NOT NULL,
   `position` varchar(25) NOT NULL,
-  `statusofemployment` varchar(25) NOT NULL
+  `statusofemployment` varchar(25) NOT NULL,
+  `program` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `workexp`
---
-
-INSERT INTO `workexp` (`id`, `user_id`, `company`, `datefrom`, `dateto`, `salary`, `position`, `statusofemployment`) VALUES
-(1, 2, 'Company 1', '2019-01-01', '2020-01-01', 13000, 'Manager', 'Permanent');
 
 --
 -- Indexes for dumped tables
@@ -324,7 +311,7 @@ ALTER TABLE `workexp`
 -- AUTO_INCREMENT for table `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `eligibilities`
@@ -342,7 +329,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `seminar_and_trainings`
@@ -354,19 +341,19 @@ ALTER TABLE `seminar_and_trainings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `workexp`
 --
 ALTER TABLE `workexp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
