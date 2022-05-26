@@ -66,7 +66,8 @@ class User_model extends CI_Model {
 			'datefrom' => $this->input->post('datefrom'),
 			'dateto' => $this->input->post('dateto'),
 			'degree' => $this->input->post('degree'),
-			'areaofstudy' => $this->input->post('areaofstudy')
+			'areaofstudy' => $this->input->post('areaofstudy'),
+			'program' => $this->input->post('program')
 		);
 		$this->db->insert('education', $data);
 	}
@@ -91,6 +92,7 @@ class User_model extends CI_Model {
 	function add_eligibility(){
 		$data = array(
 			'user_id' => $this->input->post('user_id'),
+			'program' => $this->input->post('program'),
 			'license' => $this->input->post('license'),
 			'rate' => $this->input->post('rate'),
 			'date' => $this->input->post('date'),

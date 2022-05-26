@@ -60,7 +60,7 @@
 		        labels: ['Doctorate', "Master's", "Bachelor's"],
 		        datasets: [{
 		            label: '',
-		            data: [<?= count($allfaculty_getdoctorate) ?>, <?= count($allfaculty_getmaster) ?>, <?= count($allfaculty_male) ?>],
+		            data: [<?= count($allfaculty_getdoctorate) ?>, <?= count($allfaculty_getmaster) ?>, <?= count($allfaculty_getbachelor) ?>],
 		            backgroundColor: [
 		                '#3b76ff',
 		                '#ff3b58',
@@ -177,6 +177,8 @@
 		        }	
 		    }
 		});
+
+		
 
 	</script>
 		

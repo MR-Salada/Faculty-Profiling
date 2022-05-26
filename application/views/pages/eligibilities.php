@@ -15,6 +15,7 @@
 				<form action="<?= site_url('members/add_eligibility') ?>" method="POST">
 				<div class="modal-body">
 		      		<input type="text"  name="user_id" value="<?= $userinfos->id ?>" hidden>
+		      		<input type="text"  name="program" value="<?= $userinfos->program ?>" hidden>
 					<div class="mb-2 row">
 					    <label for="license" class="col-sm-3 col-form-label">Licensure</label>
 					    <div class="col-sm-9">

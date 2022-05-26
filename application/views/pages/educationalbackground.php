@@ -16,6 +16,7 @@
 			      <form action="<?= site_url('members/add_education') ?>" method="POST" >
 			      <div class="modal-body">
 			      		<input type="text"  name="user_id" value="<?= $userinfos->id ?>" hidden>
+			      		<input type="text"  name="program" value="<?= $userinfos->program ?>" hidden>
 			      		<div class="mb-2 row">
 						    <label for="school" class="col-sm-3 col-form-label">School</label>
 						    <div class="col-sm-9">

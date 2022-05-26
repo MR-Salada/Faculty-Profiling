@@ -46,14 +46,12 @@
 		<div class="col col-3 border">
 			<div class="row mt-5 p-3">
 				<div id="list-example" class="list-group">
-				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/') ?>">All Faculty</a>
+				  <a class="list-group-item list-group-item-action bg-success text-light" href="<?= site_url('hr/') ?>">All Faculty</a>
 				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bat') ?>">BAT</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-				  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bsba') ?>">BSBA</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/teed') ?>">TEED</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bscs') ?>" >BSCS</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bshm') ?>">BSHM</a>
 				</div>
 
 			</div>

@@ -45,12 +45,12 @@
 	<div class="row mt-5 border">
 		<div class="col col-3 border">
 			<div class="row mt-5 p-3">
-				<div id="list-menu" class="list-group fixed">
+				<div id="list-example" class="list-group">
 				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/') ?>">All Faculty</a>
-				  <a class="list-group-item list-group-item-action bg-success text-light" href="<?= site_url('hr/bat') ?>">BAT</a>
+				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bat') ?>">BAT</a>
 				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bsba') ?>">BSBA</a>
-				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/teed') ?>">TEED</a>
-				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bscs') ?>" >BSCS</a>
+				  <a class="list-group-item list-group-item-action"  href="<?= site_url('hr/teed') ?>">TEED</a>
+				  <a class="list-group-item list-group-item-action bg-success text-light" href="<?= site_url('hr/bscs') ?>">BSCS</a>
 				  <a class="list-group-item list-group-item-action" href="<?= site_url('hr/bshm') ?>">BSHM</a>
 				</div>
 
@@ -62,11 +62,11 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col">
-							<h5 class="card-text">Male: <?= count($bat_getmale) ?></h5>
-							<h5 class="card-text">Female: <?= count($bat_getfemale) ?></h5>
+							<h5 class="card-text">Male: <?= count($bscs_getmale) ?></h5>
+							<h5 class="card-text">Female: <?= count($bscs_getfemale) ?></h5>
 						</div>
 						<div class="col">
-							<canvas id="batgender" width="200" height="100"></canvas>	
+							<canvas id="bscsgender" width="200" height="100"></canvas>	
 						</div>
 					</div>	
 				</div>
@@ -76,12 +76,12 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-			    			<h5 class="card-text">Doctorate: <?= count($bat_getdoctorate) ?></h5>
-					      	<h5 class="card-text">Master's: <?= count($bat_getmaster) ?></h5>
-					      	<h5 class="card-text">Bachelor's: <?= count($bat_getbachelor) ?></h5>
+			    			<h5 class="card-text">Doctorate: <?= count($bscs_getdoctorate) ?></h5>
+					      	<h5 class="card-text">Master's: <?= count($bscs_getmaster) ?></h5>
+					      	<h5 class="card-text">Bachelor's: <?= count($bscs_getbachelor) ?></h5>
 			    		</div>
 			    		<div class="col">
-							<canvas id="bateducation" width="200" height="100"></canvas>
+							<canvas id="bscseducation" width="200" height="100"></canvas>
 			    		</div>
 			    	</div>
 			  	</div>
@@ -91,12 +91,12 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-			    			<h5 class="card-text">Permanent: <?= count($bat_getpermanent) ?></h5>
-					      	<h5 class="card-text">Temporary Permanent: <?= count($bat_gettemppermanent) ?></h5>
-					      	<h5 class="card-text">Contract of Service: <?= count($bat_getcos) ?></h5>
+			    			<h5 class="card-text">Permanent: <?= count($bscs_getpermanent) ?></h5>
+					      	<h5 class="card-text">Temporary Permanent: <?= count($bscs_gettemppermanent) ?></h5>
+					      	<h5 class="card-text">Contract of Service: <?= count($bscs_getcos) ?></h5>
 			    		</div>
 			    		<div class="col">
-							<canvas id="batemploymentstat" width="200" height="100"></canvas>
+							<canvas id="bscsemploymentstat" width="200" height="100"></canvas>
 			    		</div>
 			    	</div>
 			  	</div>
@@ -106,13 +106,13 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-							<h5 class="card-text">Professor: <?= count($bat_getprofessor) ?></h5>
-							<h5 class="card-text">Associate Professor: <?= count($bat_getasscprofessor) ?></h5>
-							<h5 class="card-text">Assistant Professor: <?= count($bat_getassiprofessor) ?></h5>
-							<h5 class="card-text">Instructor: <?= count($bat_instructor) ?></h5>
+							<h5 class="card-text">Professor: <?= count($bscs_getprofessor) ?></h5>
+							<h5 class="card-text">Associate Professor: <?= count($bscs_getasscprofessor) ?></h5>
+							<h5 class="card-text">Assistant Professor: <?= count($bscs_getassiprofessor) ?></h5>
+							<h5 class="card-text">Instructor: <?= count($bscs_instructor) ?></h5>
 			    		</div>
 			    		<div class="col">
-							<canvas id="batacadrank" width="200" height="100"></canvas>
+							<canvas id="bscsacadrank" width="200" height="100"></canvas>
 			    		</div>
 			    	</div>
 			  	</div>
@@ -127,14 +127,14 @@
 </div>
 
 <script>
-	const ctx = document.getElementById('batgender').getContext('2d');
-	const myChart = new Chart(ctx, {
+	const ctxbscs = document.getElementById('bscsgender').getContext('2d');
+	const myChart = new Chart(ctxbscs, {
 	    type: 'bar',
 	    data: {
 	        labels: ['Male', 'Female'],
 	        datasets: [{
 	            label: '',
-	            data: [<?= count($bat_getmale) ?>, <?= count($bat_getfemale) ?>],
+	            data: [<?= count($bscs_getmale) ?>, <?= count($bscs_getfemale) ?>],
 	            backgroundColor: [
 	                '#3b76ff',
 	                '#ff3b58'
@@ -180,14 +180,14 @@
 	        
 	    }
 	});
-	const ctxbateducation = document.getElementById('bateducation').getContext('2d');
-	const myCharta = new Chart(ctxbateducation, {
+	const ctxbscseducation = document.getElementById('bscseducation').getContext('2d');
+	const myCharta = new Chart(ctxbscseducation, {
 	    type: 'bar',
 	    data: {
 	        labels: ['Doctorate', "Master's", "Bachelor's"],
 	        datasets: [{
 	            label: '',
-	            data: [<?= count($bat_getdoctorate) ?>, <?= count($bat_getmaster) ?>, <?= count($bat_getbachelor) ?>],
+	            data: [<?= count($bscs_getdoctorate) ?>, <?= count($bscs_getmaster) ?>, <?= count($bscs_getbachelor) ?>],
 	            backgroundColor: [
 	                '#3b76ff',
 	                '#ff3b58',
@@ -221,14 +221,14 @@
 	        }	
 	    }
 	});
-	const ctxbatemploymentstat = document.getElementById('batemploymentstat').getContext('2d');
-	const myChartb = new Chart(ctxbatemploymentstat, {
+	const ctxbscsemploymentstat = document.getElementById('bscsemploymentstat').getContext('2d');
+	const myChartb = new Chart(ctxbscsemploymentstat, {
 	    type: 'bar',
 	    data: {
 	        labels: ['Permanent', "Temporary Permanent", "Contract of Service"],
 	        datasets: [{
 	            label: '',
-	            data: [<?= count($bat_getpermanent) ?>, <?= count($bat_gettemppermanent) ?>, <?= count($bat_getcos) ?>],
+	            data: [<?= count($bscs_getpermanent) ?>, <?= count($bscs_gettemppermanent) ?>, <?= count($bscs_getcos) ?>],
 	            backgroundColor: [
 	                '#3b76ff',
 	                '#ff3b58',
@@ -262,14 +262,14 @@
 	        }	
 	    }
 	});
-	const ctxbatacadrank = document.getElementById('batacadrank').getContext('2d');
-	const myChartc = new Chart(ctxbatacadrank, {
+	const ctxbscsacadrank = document.getElementById('bscsacadrank').getContext('2d');
+	const myChartc = new Chart(ctxbscsacadrank, {
 	    type: 'bar',
 	    data: {
 	        labels: ['Professor', "Associate Professor", "Assistant Professor", "Instructor"],
 	        datasets: [{
 	            label: '',
-	            data: [<?= count($bat_getprofessor) ?>, <?= count($bat_getasscprofessor) ?>, <?= count($bat_getassiprofessor) ?>, <?= count($bat_instructor) ?>],
+	            data: [<?= count($bscs_getprofessor) ?>, <?= count($bscs_getasscprofessor) ?>, <?= count($bscs_getassiprofessor) ?>, <?= count($bscs_instructor) ?>],
 	            backgroundColor: [
 	                '#3b76ff',
 	                '#ff3b58',
@@ -304,5 +304,6 @@
 	        }	
 	    }
 	});
+	
 </script>
 <?php $this->load->view('templates/footer'); ?>
