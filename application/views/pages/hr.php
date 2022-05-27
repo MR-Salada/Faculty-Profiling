@@ -76,9 +76,10 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-			    			<h5 class="card-text">Doctorate: <?= count($allfaculty_getdoctorate) ?></h5>
-					      	<h5 class="card-text">Master's: <?= count($allfaculty_getmaster) ?></h5>
-					      	<h5 class="card-text">Bachelor's: <?= count($allfaculty_getbachelor) ?></h5>
+			    			<h5 class="card-text">Doctorate: <?= count($allfaculty_getdoctorate) ?> | <span class="text-primary"><?= count($allfaculty_getmaledoctorate) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaledoctorate) ?></span></h5>
+					      	<h5 class="card-text">Master's: <?= count($allfaculty_getmaster) ?> | <span class="text-primary"><?= count($allfaculty_getmalemaster) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemalemaster) ?></span></h5>
+					      	<h5 class="card-text">Bachelor's: <?= count($allfaculty_getbachelor) ?> | <span class="text-primary"><?= count($allfaculty_getmalebachelor) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemalebachelor) ?></span></h5>
+
 			    		</div>
 			    		<div class="col">
 							<canvas id="allFacultyeducation" width="200" height="100"></canvas>
@@ -91,8 +92,8 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-			    			<h5 class="card-text">Permanent: <?= count($allfaculty_getpermanent) ?></h5>
-					      	<h5 class="card-text">Temporary Permanent: <?= count($allfaculty_gettemppermanent) ?></h5>
+			    			<h5 class="card-text">Permanent: <?= count($allfaculty_getpermanent) ?> | <span class="text-primary"><?= count($allfaculty_getmalepermanent) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemalepermanent) ?></span></h5>
+					      	<h5 class="card-text">Temporary Permanent: <?= count($allfaculty_gettemppermanent) ?> | <span class="text-primary"><?= count($allfaculty_getmaletemppermanent) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaletemppermanent) ?></span></h5>
 					      	<h5 class="card-text">Contract of Service: <?= count($allfaculty_getcos) ?></h5>
 			    		</div>
 			    		<div class="col">
@@ -106,10 +107,10 @@
 			    <div class="card-body">
 			    	<div class="row">
 			    		<div class="col">
-							<h5 class="card-text">Professor: <?= count($allfaculty_getprofessor) ?></h5>
-							<h5 class="card-text">Associate Professor: <?= count($allfaculty_getasscprofessor) ?></h5>
-							<h5 class="card-text">Assistant Professor: <?= count($allfaculty_getassiprofessor) ?></h5>
-							<h5 class="card-text">Instructor: <?= count($allfaculty_instructor) ?></h5>
+							<h5 class="card-text">Professor: <?= count($allfaculty_getprofessor) ?> | <span class="text-primary"><?= count($allfaculty_getmaleprofessor) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaleprofessor) ?></span></h5>
+							<h5 class="card-text">Associate Professor: <?= count($allfaculty_getasscprofessor) ?> | <span class="text-primary"><?= count($allfaculty_getmaleassoprofessor) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaleassoprofessor) ?></span></h5>
+							<h5 class="card-text">Assistant Professor: <?= count($allfaculty_getassiprofessor) ?> | <span class="text-primary"><?= count($allfaculty_getmaleassiprofessor) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaleassiprofessor) ?></span></h5>
+							<h5 class="card-text">Instructor: <?= count($allfaculty_instructor) ?> | <span class="text-primary"><?= count($allfaculty_getmaleinstructor) ?></span> | <span class="text-danger"><?= count($allfaculty_getfemaleinstructor) ?></span></h5>
 			    		</div>
 			    		<div class="col">
 							<canvas id="allFacultyacadrank" width="200" height="100"></canvas>

@@ -24,6 +24,27 @@ class Hr extends CI_Controller {
 		$data['allfaculty_getassiprofessor'] = $this->hr_model->allfaculty_getassiprofessor();
 		$data['allfaculty_instructor'] = $this->hr_model->allfaculty_instructor();
 		$data['allfaculty_getmaledoctorate'] = $this->hr_model->allfaculty_getmaledoctorate();
+		$data['allfaculty_getfemaledoctorate'] = $this->hr_model->allfaculty_getfemaledoctorate();
+		$data['allfaculty_getmalemaster'] = $this->hr_model->allfaculty_getmalemaster();
+		$data['allfaculty_getfemalemaster'] = $this->hr_model->allfaculty_getfemalemaster();
+		$data['allfaculty_getmalebachelor'] = $this->hr_model->allfaculty_getmalebachelor();
+		$data['allfaculty_getfemalebachelor'] = $this->hr_model->allfaculty_getfemalebachelor();
+		$data['allfaculty_getmalepermanent'] = $this->hr_model->allfaculty_getmalepermanent();
+		$data['allfaculty_getfemalepermanent'] = $this->hr_model->allfaculty_getfemalepermanent();
+		$data['allfaculty_getmaletemppermanent'] = $this->hr_model->allfaculty_getmaletemppermanent();
+		$data['allfaculty_getfemaletemppermanent'] = $this->hr_model->allfaculty_getfemaletemppermanent();
+
+
+		$data['allfaculty_getmaleprofessor'] = $this->hr_model->allfaculty_getmaleprofessor();
+		$data['allfaculty_getfemaleprofessor'] = $this->hr_model->allfaculty_getfemaleprofessor();
+		$data['allfaculty_getmaleassoprofessor'] = $this->hr_model->allfaculty_getmaleassoprofessor();
+		$data['allfaculty_getfemaleassoprofessor'] = $this->hr_model->allfaculty_getfemaleassoprofessor();
+		$data['allfaculty_getmaleassiprofessor'] = $this->hr_model->allfaculty_getmaleassiprofessor();
+		$data['allfaculty_getfemaleassiprofessor'] = $this->hr_model->allfaculty_getfemaleassiprofessor();
+		$data['allfaculty_getmaleinstructor'] = $this->hr_model->allfaculty_getmaleinstructor();
+		$data['allfaculty_getfemaleinstructor'] = $this->hr_model->allfaculty_getfemaleinstructor();
+
+
 		$data['title'] = 'All Faculty';
 		$data['userinfos'] = $this->ion_auth->user()->row();
 		$this->load->view('pages/hr', $data);

@@ -32,9 +32,48 @@ class Hr_model extends CI_Model {
 	function allfaculty_getmaledoctorate(){
 		$this->db->select('*');
 		$this->db->from('education');
-		$this->db->from('users');
 		$this->db->where('degree', 'Doctoral');
-		$this->db->where('gender', 'Male');
+		$this->db->where('sex', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaledoctorate(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->where('degree', 'Doctoral');
+		$this->db->where('sex', 'Female');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getmalemaster(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->where('degree', 'Master');
+		$this->db->where('sex', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemalemaster(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->where('degree', 'Master');
+		$this->db->where('sex', 'Female');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getmalebachelor(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->where('degree', 'Bachelor');
+		$this->db->where('sex', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemalebachelor(){
+		$this->db->select('*');
+		$this->db->from('education');
+		$this->db->where('degree', 'Bachelor');
+		$this->db->where('sex', 'Female');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -59,10 +98,42 @@ class Hr_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function allfaculty_getmalepermanent(){
+		$this->db->select('*');
+		$this->db->from('workexp');
+		$this->db->where('statusofemployment', 'Permanent');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemalepermanent(){
+		$this->db->select('*');
+		$this->db->from('workexp');
+		$this->db->where('statusofemployment', 'Permanent');
+		$this->db->where('gender', 'Female');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function allfaculty_gettemppermanent(){
 		$this->db->select('*');
 		$this->db->from('workexp');
 		$this->db->where('statusofemployment', 'Temporary Permanent');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getmaletemppermanent(){
+		$this->db->select('*');
+		$this->db->from('workexp');
+		$this->db->where('statusofemployment', 'Permanent');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaletemppermanent(){
+		$this->db->select('*');
+		$this->db->from('workexp');
+		$this->db->where('statusofemployment', 'Permanent');
+		$this->db->where('gender', 'Female');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -80,10 +151,42 @@ class Hr_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function allfaculty_getmaleprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Professor');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaleprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Professor');
+		$this->db->where('gender', 'Female');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function allfaculty_getasscprofessor(){
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where('academicrank', 'Associate Professor');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getmaleassoprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Associate Professor');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaleassoprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Associate Professor');
+		$this->db->where('gender', 'Female');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -94,10 +197,42 @@ class Hr_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function allfaculty_getmaleassiprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Assistant Professor');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaleassiprofessor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Assistant Professor');
+		$this->db->where('gender', 'Female');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function allfaculty_instructor(){
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where('academicrank', 'Instructor');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getmaleinstructor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Instructor');
+		$this->db->where('gender', 'Male');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function allfaculty_getfemaleinstructor(){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('academicrank', 'Instructor');
+		$this->db->where('gender', 'Female');
 		$query = $this->db->get();
 		return $query->result();
 	}
