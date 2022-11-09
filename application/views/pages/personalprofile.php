@@ -1,12 +1,12 @@
 		<div class="row py-3">
 			<div class="col col-2">
-				<img src="<?php echo site_url('assets/images/') ?><?= $userinfos->profilepic ?>" width="150" alt="User Image" data-bs-toggle="modal" data-bs-target="#profile">
+				<img class="rounded-circle" src="<?php echo site_url('assets/images/') ?><?= $userinfos->profilepic ?>" width="150" height="150" alt="User Image" data-bs-toggle="modal" data-bs-target="#profile">
 
 				<div class="modal fade" id="profile" tabindex="-1" aria-labelledby="profile" aria-hidden="true" >
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">Edit Profile Picture</h5>
+				        <h5 class="modal-title" id="editProfilePic">Edit Profile Picture</h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
@@ -27,19 +27,19 @@
 				</div>
 			</div>
 			<div class="col col-6 ">
-				<h4><strong>Personal Profile</strong></h4>
-				<p><?php echo $userinfos->name ?> <br> <?php echo $userinfos->title ?> (<?= $userinfos->membership_date ?>) <br> <?php echo $userinfos->phone ?> <br> <?php echo $userinfos->email ?></p>
+				<h4><strong><?php echo $userinfos->name ?></strong></h4>
+				<p><?php echo $userinfos->title ?> <?= $userinfos->designation ?> <br> <?php echo $userinfos->phone ?> <br> <?php echo $userinfos->email ?></p>
 				<!-- Button trigger modal -->
-				<button type="button" class="btn rounded-pill btn-success" data-bs-toggle="modal" data-bs-target="#viewmore">
+				<!-- <button type="button" class="btn rounded-pill btn-success" data-bs-toggle="modal" data-bs-target="#viewmore">
 				  See more...
 				</button>
-
+ -->
 				<!-- View Modal -->
-				<div class="modal fade" id="viewmore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="viewmore" tabindex="-1" aria-labelledby="editProfilePic" aria-hidden="true">
 				  <div class="modal-dialog modal-lg">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">See more basic profiles</h5>
+				        <h5 class="modal-title" id="editProfilePic">See more basic profiles</h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
@@ -233,11 +233,11 @@
 
 
 			</div>
-			<div class="col col-4">
+			<!-- <div class="col col-4">
 				<button type="button" class="btn rounded-pill btn-warning" data-bs-toggle="modal" data-bs-target="#editbasicinfo">
 				  Edit Basic Info
 				</button>
-			</div>
+			</div> -->
 
 
 		</div>
