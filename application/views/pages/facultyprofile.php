@@ -3,9 +3,9 @@
 				<h4><strong>Faculty Profile</strong></h4>
 				<p><?php echo $userinfos->college ?> <br> <?= $userinfos->program ?> <br> <?= $userinfos->fieldofdiscipline ?> <br> <?= $userinfos->designation ?> <br> <?= $userinfos->academicrank ?> <br> <?= $userinfos->yearsofteaching ?> year/s of teaching</p>
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#facultyprofile">
+				<!-- <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#facultyprofile">
 				  Edit Field
-				</button>
+				</button> -->
 
 				<!-- Modal -->
 				<div class="modal fade" id="facultyprofile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
@@ -85,9 +85,9 @@
 					 <textarea class="form-control mb-2" name="overview" placeholder="Leave you overview here" id="overview" style="height: 200px" readonly><?= $userinfos->overview ?></textarea>
 					 				
 					 <!-- Button trigger modal -->
-					<button type="button" class="btn btn-sm btn-success mb-2" data-bs-toggle="modal" data-bs-target="#editoverview">
+					<!-- <button type="button" class="btn btn-sm btn-success mb-2" data-bs-toggle="modal" data-bs-target="#editoverview">
 					  Edit Overview
-					</button>
+					</button> -->
 
 					<!-- Modal -->
 					<div class="modal fade" id="editoverview" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">

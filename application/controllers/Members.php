@@ -56,7 +56,9 @@ class Members extends CI_Controller {
 			redirect('Members','refresh');
 
 		} else {
-			print_r($this->upload->display_errors());
+			// print_r($this->upload->display_errors());
+			echo '<script>alert("The filetype you are attempting to upload is not allowed.")</script>';
+			redirect('Members', 'refresh');
 		}
 		$this->load->library('upload', $config);
 	}
