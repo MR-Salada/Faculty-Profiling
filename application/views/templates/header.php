@@ -10,7 +10,10 @@
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="<?= site_url('assets/js/chart.min.js') ?>"></script>
 	<script src="<?= site_url('assets/js/jquery.min.js') ?>"></script>
+<<<<<<< HEAD
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+=======
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
 
 </head>
 <body>

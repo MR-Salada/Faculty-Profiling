@@ -5,6 +5,7 @@ class My_profile extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('user_model');
+<<<<<<< HEAD
 		$this->load->library('form_validation');
 		$this->load->library('ion_auth');
 		$this->load->model('my_profiles_model');
@@ -18,11 +19,21 @@ class My_profile extends CI_Controller {
 			redirect('/', 'refresh');
 		}
 	}
+=======
+		$this->load->library('ion_auth');
+		if (!$this->ion_auth->logged_in()) {
+			redirect('/', 'refresh');
+		}
+
+	}
+
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
 	public function index()
 	{
 		$data['userinfos'] = $this->ion_auth->user()->row();
 		$data['title'] = "My Profile";
 		$this->load->view('pages/myprofile.php', $data);
+<<<<<<< HEAD
 		$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 		$this->data['users'] = $this->ion_auth->users()->result();
 			
@@ -204,6 +215,21 @@ if ($this->input->post()) {
 			}
 		}
 	}
+=======
+	}
+
+	public function updateaccount(){
+		$data = array(
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email')
+		);
+		$this->db->where('id', $this->input->post('user_id'));
+		$update = $this->db->update('users', $data);
+		if ($update) {
+			alert('updated');
+		} 
+			redirect('My_profile','refresh');
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
 	}
 
 }

@@ -43,14 +43,20 @@
     }
 
     /* Style the buttons inside the tab */
+<<<<<<< HEAD
     .tab button, .tab a {
       background-color: #caf595;
+=======
+    .tab button {
+      background-color: inherit;
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
       float: left;
       border: none;
       outline: none;
       cursor: pointer;
       padding: 14px 16px;
       transition: 0.3s;
+<<<<<<< HEAD
       color: green;
     }
 
@@ -65,6 +71,19 @@
     .tab a.active {
       background-color: #64b500;
       color: #ffff;
+=======
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+      color: white;
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
     }
 
     /* Style the tab content */
@@ -74,7 +93,11 @@
       border-top: none;
     }
     /*BUTTON SUBMIT*/
+<<<<<<< HEAD
     .btnsubmit {
+=======
+    .btn {
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
       background: #3498db;
       background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
       background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -93,7 +116,11 @@
       text-decoration: none;
     }
 
+<<<<<<< HEAD
     .btnsubmit:hover {
+=======
+    .btn:hover {
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
       background: #3cb0fd;
       background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
       background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
@@ -115,6 +142,7 @@
     
   </style>
   
+<<<<<<< HEAD
 <!--   <div class="tab sidenav bg-success d-flex flex-column">
     <button class="tablinks form-control" onclick="opentabs(event, 'personal_inf')">Personal Information</button>
     <button class="tablinks form-control" onclick="opentabs(event, 'family_bg')">Family Background</button>
@@ -415,10 +443,208 @@
                   <label for="fathersurname">NAME</label>
                   <input type="text" class="form-control" name="children[]" id="children" value="">
                   <button type="button" class="btn btn-outline-success add_button"><img src="<?php echo site_url('assets/images/plus-circle.svg') ?>" alt="add children button" title="Add Children"></button>
+=======
+  <div class="tab sidenav bg-success">
+    <button class="tablinks form-control" onclick="opentabs(event, 'account')" id="defaultOpen">Account</button>
+    <button class="tablinks form-control" onclick="opentabs(event, 'personal_inf')">Personal Information</button>
+    <button class="tablinks form-control" onclick="opentabs(event, 'family_bg')">Family Background</button>
+  </div>
+
+  <div class="main">  
+    <div id="account" class="tabcontent">
+      <div class="card p-3">
+        <form action="<?php echo site_url('my_profile/updateaccount') ?>/<?= $userinfos->id ?>" method="POST">
+          <h3>Account</h3>
+
+          <input type="text" name="user_id" value="<?php echo $userinfos->id ?>" hidden >
+          <div class="row px-3 py-2">
+            <div class="col">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" value="<?= $userinfos->firstname ?><?= $userinfos->middlename ?><?= $userinfos->name ?>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" value="<?= $userinfos->email ?>">
+              </div>
+            </div>
+          </div>
+          <div class="row px-3 py-2">
+            <div class="col">
+              <div class="field">
+                <label for="middlename">Password</label>
+                <input type="text" class="form-control" name="middlename" id="middlename" value="<?= $userinfos->middlename ?>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="field">
+                <label for="suffix">Confirm Password</label>
+                <input type="text" class="form-control" name="suffix" id="suffix" value="<?= $userinfos->suffix ?>">
+              </div>
+            </div>
+          </div>
+          <div class="inline mt-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+        
+      </div>
+
+    </div>
+
+    <div id="personal_inf" class="tabcontent">
+      
+      <div class="card p-3">
+        <h3>Personal Information</h3>
+        <div class="row">
+          <div class="col-3">
+            <div class="field">
+              <label for="name">Surname</label>
+              <input type="text" class="form-control" name="name" id="name" value="<?= $userinfos->name ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="firstname">Firstname</label>
+              <input type="text" class="form-control" name="firstname" id="firstname" value="<?= $userinfos->firstname ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="middlename">Middlename</label>
+              <input type="text" class="form-control" name="middlename" id="middlename" value="<?= $userinfos->middlename ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="suffix">Suffix</label>
+              <input type="text" class="form-control" name="suffix" id="suffix" value="<?= $userinfos->suffix ?>">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <div class="field">
+              <label for="birthday">Date of Birth (dd/mm/yyyy)</label>
+              <input type="date" class="form-control" name="birthday" id="birthday" value="<?= $userinfos->birthday ?>">
+            </div>
+          </div>
+          <div class="col">
+            <div class="field">
+              <label for="birthplace">Place of Birth</label>
+              <input type="text" class="form-control" name="birthplace" id="birthplace" value="<?= $userinfos->birthplace ?>">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-3">
+            <div class="field">
+              <label for="gender">Sex</label>
+              <select class="form-select" aria-label="select gender">
+                <option selected><?= $userinfos->gender ?></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="civilstat">Civil Status</label>
+              <select class="form-select" aria-label="select civil stat">
+                <option selected><?= $userinfos->civilstat ?></option>
+                <option value="Male">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+                <option value="Separated">Separated</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="height">Height (m)</label>
+              <input type="text" class="form-control" name="height" id="height" value="<?= $userinfos->height ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="weight">Weight (kg)</label>
+              <input type="text" class="form-control" name="weight" id="weight" value="<?= $userinfos->weight ?>">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-3">
+            <div class="field">
+              <label for="bloodtype">Blood Type</label>
+              <input type="text" class="form-control" name="bloodtype" id="bloodtype" value="<?= $userinfos->bloodtype ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="gsis">GSIS ID No.</label>
+              <input type="text" class="form-control" name="gsis" id="gsis" value="<?= $userinfos->gsis ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="pagibig">PAG-IBIG ID NO.</label>
+              <input type="text" class="form-control" name="pagibig" id="pagibig" value="<?= $userinfos->pagibig ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="philhealth">PHILHEALTH NO.</label>
+              <input type="text" class="form-control" name="philhealth" id="philhealth" value="<?= $userinfos->philhealth ?>">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-3">
+            <div class="field">
+              <label for="sss">SSS No.</label>
+              <input type="text" class="form-control" name="sss" id="sss" value="<?= $userinfos->sss ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="tin">TIN No.</label>
+              <input type="text" class="form-control" name="tin" id="tin" value="<?= $userinfos->tin ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="agencyemployee">AGENCY EMPLOYEE NO.</label>
+              <input type="text" class="form-control" name="agencyemployee" id="agencyemployee" value="<?= $userinfos->agencyemployee ?>">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="field">
+              <label for="citizenship">CITIZENSHIP</label>
+              <input type="text" class="form-control" name="citizenship" id="citizenship" value="<?= $userinfos->citizenship ?>">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            <div class="row">
+              <div class="col">
+                <div class="field">
+                  <label for="sss">SSS No.</label>
+                  <input type="text" class="form-control" name="sss" id="sss" value="<?= $userinfos->sss ?>">
+                </div>
+              </div>
+              <div class="col">
+                <div class="field">
+                  <label for="sss">SSS No.</label>
+                  <input type="text" class="form-control" name="sss" id="sss" value="<?= $userinfos->sss ?>">
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
                 </div>
               </div>
             </div>
           </div>
+<<<<<<< HEAD
           <h5>NAME OF CHILDREN</h5>
         </div>
         <div class="card p-2 my-2">
@@ -469,11 +695,27 @@
               <div class="form-floating">
                 <input type="text" class="form-control" name="mothermiddlename" id="mothermiddlename" value="<?= $userinfos->mothermiddlename ?>" placeholder=" ">
                 <label for="mothermiddlename">MIDDLE NAME</label>
+=======
+          <div class="col-6">
+            <div class="row">
+              <div class="col">
+                <div class="field">
+                  <label for="sss">SSS No.</label>
+                  <input type="text" class="form-control" name="sss" id="sss" value="<?= $userinfos->sss ?>">
+                </div>
+              </div>
+              <div class="col">
+                <div class="field">
+                  <label for="sss">SSS No.</label>
+                  <input type="text" class="form-control" name="sss" id="sss" value="<?= $userinfos->sss ?>">
+                </div>
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
               </div>
             </div>
           </div>
         </div>
         <div class="inline mt-3">
+<<<<<<< HEAD
           <button type="submit" class="btn btn-outline-success">Update</button>
         </div>
       </div>
@@ -494,6 +736,17 @@
   </div>  
   <script src="assets/js/address_selector.js" type="text/javascript" charset="utf-8" async defer></script>
 
+=======
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+    <div id="family_bg" class="tabcontent">
+      <h3>Family Background</h3>
+      <p>Family Background Page</p>
+    </div>
+  </div>  
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
   <script>
     function opentabs(evt, tab) {
       var i, tabcontent, tablinks;
@@ -511,6 +764,7 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
   </script>
+<<<<<<< HEAD
   <script type="text/javascript">
     $('document').ready(function(){
       var maxField = 5;
@@ -560,3 +814,9 @@
 
 
 <?php $this->load->view('templates/footer'); ?>
+=======
+
+
+
+<?php $this->load->view('templates/footer'); ?>
+>>>>>>> d2ade9d68a85fd20ab07eb9a5aa7199ea75249a6
